@@ -6,7 +6,7 @@
 - Changed `classes={root:...}` to `classNames={...}` only where it had `classes={root:...}` and not like `classes={root:..., something:... ,...}`
 - Added `classnames()` to avoid doing brittle class name manipulation
 - Classes that do not need states were converted to functions
-- Moved the style variables in `src/variables/styles.jsx` and all the components styles in `src/variables/styles/{$componentNameStyle}.jsx` files
+- Moved the style variables in `src/variables/styles.js` and all the components styles in `src/variables/styles/{$componentNameStyle}.js` files
 - Added `-webkit-overflow-scrolling: touch` css for nice scrolling on mobile devices
 - Updated to latest `Material-UI` version (from `v1.0.0.beta30` to `v1.0.0.beta31`)
 

@@ -82,71 +82,71 @@ material-dashboard-react
     │       └── tim_80x80.png
     ├── components
     │   ├── Cards
-    │   │   ├── ChartCard.jsx
-    │   │   ├── ProfileCard.jsx
-    │   │   ├── RegularCard.jsx
-    │   │   ├── StatsCard.jsx
-    │   │   └── TasksCard.jsx
+    │   │   ├── ChartCard.js
+    │   │   ├── ProfileCard.js
+    │   │   ├── RegularCard.js
+    │   │   ├── StatsCard.js
+    │   │   └── TasksCard.js
     │   ├── CustomButtons
-    │   │   ├── Button.jsx
-    │   │   └── IconButton.jsx
+    │   │   ├── Button.js
+    │   │   └── IconButton.js
     │   ├── CustomInput
-    │   │   └── CustomInput.jsx
+    │   │   └── CustomInput.js
     │   ├── Footer
-    │   │   └── Footer.jsx
+    │   │   └── Footer.js
     │   ├── Grid
-    │   │   └── ItemGrid.jsx
+    │   │   └── ItemGrid.js
     │   ├── Header
-    │   │   ├── Header.jsx
-    │   │   └── HeaderLinks.jsx
+    │   │   ├── Header.js
+    │   │   └── HeaderLinks.js
     │   ├── Sidebar
-    │   │   └── Sidebar.jsx
+    │   │   └── Sidebar.js
     │   ├── Snackbar
-    │   │   ├── Snackbar.jsx
-    │   │   └── SnackbarContent.jsx
+    │   │   ├── Snackbar.js
+    │   │   └── SnackbarContent.js
     │   ├── Table
-    │   │   └── Table.jsx
+    │   │   └── Table.js
     │   ├── Tasks
-    │   │   └── Tasks.jsx
+    │   │   └── Tasks.js
     │   ├── Typography
-    │   │   ├── A.jsx
-    │   │   ├── Danger.jsx
-    │   │   ├── Info.jsx
-    │   │   ├── Muted.jsx
-    │   │   ├── P.jsx
-    │   │   ├── Primary.jsx
-    │   │   ├── Quote.jsx
-    │   │   ├── Small.jsx
-    │   │   ├── Success.jsx
-    │   │   └── Warning.jsx
+    │   │   ├── A.js
+    │   │   ├── Danger.js
+    │   │   ├── Info.js
+    │   │   ├── Muted.js
+    │   │   ├── P.js
+    │   │   ├── Primary.js
+    │   │   ├── Quote.js
+    │   │   ├── Small.js
+    │   │   ├── Success.js
+    │   │   └── Warning.js
     │   └── index.js
     ├── containers
     │   └── App
-    │       └── App.jsx
+    │       └── App.js
     ├── index.js
     ├── logo.svg
     ├── routes
-    │   ├── app.jsx
-    │   └── index.jsx
+    │   ├── app.js
+    │   └── index.js
     ├── variables
-    │   ├── charts.jsx
-    │   ├── general.jsx
-    │   └── styles.jsx
+    │   ├── charts.js
+    │   ├── general.js
+    │   └── styles.js
     └── views
         ├── Dashboard
-        │   └── Dashboard.jsx
+        │   └── Dashboard.js
         ├── Icons
-        │   └── Icons.jsx
+        │   └── Icons.js
         ├── Maps
-        │   └── Maps.jsx
+        │   └── Maps.js
         ├── Notifications
-        │   └── Notifications.jsx
+        │   └── Notifications.js
         ├── TableList
-        │   └── TableList.jsx
+        │   └── TableList.js
         ├── Typography
-        │   └── Typography.jsx
+        │   └── Typography.js
         └── UserProfile
-            └── UserProfile.jsx
+            └── UserProfile.js
 ```
 
 ## Useful Links
