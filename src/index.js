@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 // routing
 import { createBrowserHistory } from 'history';
@@ -43,16 +44,19 @@ if (refreshToken) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hist}>
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        {indexRoutes.map((prop, key) => {
-          return (
-            <Route path={prop.path} component={prop.component} key={key} />
-          );
-        })}
-      </Switch>
-    </Router>
+    <div>
+      <ToastContainer position={toast.POSITION.TOP_RIGHT} autoClose={1500} />
+      <Router history={hist}>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          {indexRoutes.map((prop, key) => {
+            return (
+              <Route path={prop.path} component={prop.component} key={key} />
+            );
+          })}
+        </Switch>
+      </Router>
+    </div>
   </Provider>,
   document.getElementById('root')
 );

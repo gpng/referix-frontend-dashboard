@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 // local imports
 import * as actions from 'actions';
@@ -21,14 +22,10 @@ class Header extends Component {
   handleLogin = async values => {
     const res = await this.props.login(values);
     if (res.success) {
+      toast.success('Login successful');
       this.props.history.push('/dashboard');
-      // return toastr.success('Login Successful', 'Welcome to Referix');
     } else {
-      // toastr.error(
-      //   'Authentication Failed',
-      //   res.message,
-      //   this.props.isMobile ? toastrOptions : {}
-      // );
+      toast.error('Invalid email or password');
     }
   };
 
@@ -38,13 +35,9 @@ class Header extends Component {
       this.setState({
         toggle: !this.state.toggle
       });
-      // return toastr.success('Signup Successful', 'Please log in');
+      toast.success('Signup successful, please log in');
     } else {
-      // toastr.error(
-      //   'Authentication Failed',
-      //   res.message,
-      //   this.props.isMobile ? toastrOptions : {}
-      // );
+      toast.error(res.message);
     }
   };
 
