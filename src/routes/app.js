@@ -23,56 +23,64 @@ const appRoutes = [
     sidebarName: 'Dashboard',
     navbarName: 'Referix Dashboard',
     icon: Dashboard,
-    component: DashboardPage
+    component: DashboardPage,
+    access: 7
   },
   {
     path: '/manageusers',
     sidebarName: 'User Management',
     navbarName: 'User Management',
     icon: Person,
-    component: UserManagement
+    component: UserManagement,
+    access: 1 // admin only
   },
   {
     path: '/profile',
     sidebarName: 'User Profile',
     navbarName: 'Profile',
     icon: Person,
-    component: UserProfile
+    component: UserProfile,
+    access: 7
   },
   {
     path: '/table',
     sidebarName: 'Table List',
     navbarName: 'Table List',
     icon: ContentPaste,
-    component: TableList
+    component: TableList,
+    access: 7
   },
   {
     path: '/typography',
     sidebarName: 'Typography',
     navbarName: 'Typography',
     icon: LibraryBooks,
-    component: Typography
+    component: Typography,
+    access: 7
   },
   {
     path: '/icons',
     sidebarName: 'Icons',
     navbarName: 'Icons',
     icon: BubbleChart,
-    component: Icons
+    component: Icons,
+    access: 7
   },
   {
     path: '/maps',
     sidebarName: 'Maps',
     navbarName: 'Map',
     icon: LocationOn,
-    component: Maps
+    component: Maps,
+    access: 7
   },
   {
     path: '/notifications',
     sidebarName: 'Notifications',
     navbarName: 'Notifications',
     icon: Notifications,
-    component: NotificationsPage
+    component: NotificationsPage,
+    access: 7
   },
   { redirect: true, path: '/', to: '/dashboard', navbarName: 'Redirect' }
 ];
