@@ -26,7 +26,7 @@ const styles = {
   }
 };
 
-let AdminSignupForm = props => {
+let CompanyCreateForm = props => {
   const { handleSubmit, submitting } = props;
 
   return (
@@ -63,14 +63,26 @@ let AdminSignupForm = props => {
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
+          <Field
+            fullWidth
+            formControl={styles.formControl}
+            id="signup-company-name"
+            name="company_name"
+            label="Company Name"
+            type="text"
+            component={renderField}
+            validate={[required]}
+          />
+        </ItemGrid>
+        <ItemGrid xs={12} sm={12} md={4}>
           <Button
             style={styles.button}
-            color="primary"
             type="submit"
+            color="primary"
             onClick={this.handleSubmit}
             disabled={submitting}
           >
-            Register Admin
+            Register Company
           </Button>
         </ItemGrid>
       </Grid>
@@ -78,9 +90,9 @@ let AdminSignupForm = props => {
   );
 };
 
-AdminSignupForm = reduxForm({
+CompanyCreateForm = reduxForm({
   // a unique name for the form
-  form: 'admin_signup'
-})(AdminSignupForm);
+  form: 'company_signup'
+})(CompanyCreateForm);
 
-export default AdminSignupForm;
+export default CompanyCreateForm;

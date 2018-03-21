@@ -7,9 +7,11 @@ import PostJobForm from './PostJobForm';
 import RecruiterProfileUpdateForm from './RecruiterProfileUpdateForm';
 import RecruiterSignupForm from './RecruiterSignupForm';
 import SearchJobForm from './SearchJobForm';
+import CompanyCreateForm from './CompanyCreateForm';
 
 export {
   AdminSignupForm,
+  CompanyCreateForm,
   CompanyProfileUpdateForm,
   CompanySignupForm,
   LoginForm,

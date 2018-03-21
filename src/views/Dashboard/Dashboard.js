@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 // react plugin for creating charts
-import ChartistGraph from "react-chartist";
+import ChartistGraph from 'react-chartist';
 import {
   ContentCopy,
   Store,
@@ -13,8 +13,8 @@ import {
   ArrowUpward,
   AccessTime,
   Accessibility
-} from "material-ui-icons";
-import { withStyles, Grid } from "material-ui";
+} from 'material-ui-icons';
+import { withStyles, Grid } from 'material-ui';
 
 import {
   StatsCard,
@@ -23,15 +23,15 @@ import {
   RegularCard,
   Table,
   ItemGrid
-} from "components";
+} from 'components';
 
 import {
   dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart
-} from "variables/charts";
+} from 'variables/charts';
 
-import dashboardStyle from "variables/styles/dashboardStyle";
+import dashboardStyle from 'variables/styles/dashboardStyle';
 
 class Dashboard extends React.Component {
   state = {
@@ -57,7 +57,7 @@ class Dashboard extends React.Component {
               small="GB"
               statIcon={Warning}
               statIconColor="danger"
-              statLink={{ text: "Get More Space...", href: "#pablo" }}
+              statLink={{ text: 'Get More Space...', href: '#pablo' }}
             />
           </ItemGrid>
           <ItemGrid xs={12} sm={6} md={3}>
@@ -110,9 +110,9 @@ class Dashboard extends React.Component {
                   <span className={this.props.classes.successText}>
                     <ArrowUpward
                       className={this.props.classes.upArrowCardCategory}
-                    />{" "}
+                    />{' '}
                     55%
-                  </span>{" "}
+                  </span>{' '}
                   increase in today sales.
                 </span>
               }
@@ -170,12 +170,12 @@ class Dashboard extends React.Component {
               content={
                 <Table
                   tableHeaderColor="warning"
-                  tableHead={["ID", "Name", "Salary", "Country"]}
+                  tableHead={['ID', 'Name', 'Salary', 'Country']}
                   tableData={[
-                    ["1", "Dakota Rice", "$36,738", "Niger"],
-                    ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                    ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                    ["4", "Philip Chaney", "$38,735", "Korea, South"]
+                    ['1', 'Dakota Rice', '$36,738', 'Niger'],
+                    ['2', 'Minerva Hooper', '$23,789', 'Curaçao'],
+                    ['3', 'Sage Rodriguez', '$56,142', 'Netherlands'],
+                    ['4', 'Philip Chaney', '$38,735', 'Korea, South']
                   ]}
                 />
               }

@@ -5,6 +5,7 @@ import Typography from 'views/Typography/Typography.js';
 import Icons from 'views/Icons/Icons.js';
 import Maps from 'views/Maps/Maps.js';
 import NotificationsPage from 'views/Notifications/Notifications.js';
+import UserManagement from 'views/UserManagement/UserManagement';
 
 import {
   Dashboard,
@@ -25,7 +26,14 @@ const appRoutes = [
     component: DashboardPage
   },
   {
-    path: '/user',
+    path: '/manageusers',
+    sidebarName: 'User Management',
+    navbarName: 'User Management',
+    icon: Person,
+    component: UserManagement
+  },
+  {
+    path: '/profile',
     sidebarName: 'User Profile',
     navbarName: 'Profile',
     icon: Person,

@@ -6,7 +6,10 @@ import {
   required,
   email
 } from 'components/Forms/FormFieldValidation';
-import Button from 'material-ui/Button';
+
+import Grid from 'material-ui/Grid';
+
+import { ItemGrid, Button } from 'components';
 
 // local imports
 
@@ -15,6 +18,11 @@ import Button from 'material-ui/Button';
 const styles = {
   button: {
     marginTop: 12
+  },
+  formControl: {
+    style: {
+      margin: 0
+    }
   }
 };
 
@@ -27,59 +35,82 @@ let RecruiterSignupForm = props => {
       className="form-horizontal"
       onSubmit={handleSubmit}
     >
-      <Field
-        required
-        id="signup-email"
-        name="email"
-        label="Email"
-        type="email"
-        component={renderField}
-        validate={[required, email]}
-      />
-      <Field
-        required
-        id="signup-password"
-        name="password"
-        label="Password"
-        type="password"
-        component={renderField}
-        validate={[required]}
-      />
-      <Field
-        required
-        id="signup-first-name"
-        name="first_name"
-        label="First Name"
-        type="text"
-        component={renderField}
-        validate={[required]}
-      />
-      <Field
-        required
-        id="signup-last-name"
-        name="last_name"
-        label="Last Name"
-        type="text"
-        component={renderField}
-        validate={[required]}
-      />
-      <Field
-        id="signup-contact-number"
-        name="contact_number"
-        label="Contact Number"
-        type="text"
-        component={renderField}
-      />
-      <Button
-        style={styles.button}
-        variant="raised"
-        color="primary"
-        type="submit"
-        onClick={this.handleSubmit}
-        disabled={submitting}
-      >
-        Register Recruiter
-      </Button>
+      <Grid container direction="column">
+        <ItemGrid xs={12} sm={12} md={4}>
+          <Field
+            required
+            fullWidth
+            formControl={styles.formControl}
+            id="signup-email"
+            name="email"
+            label="Email"
+            type="email"
+            component={renderField}
+            validate={[required, email]}
+          />
+        </ItemGrid>
+        <ItemGrid xs={12} sm={12} md={4}>
+          <Field
+            required
+            fullWidth
+            formControl={styles.formControl}
+            id="signup-password"
+            name="password"
+            label="Password"
+            type="password"
+            component={renderField}
+            validate={[required]}
+          />
+        </ItemGrid>
+        <ItemGrid xs={12} sm={12} md={4}>
+          <Field
+            required
+            fullWidth
+            formControl={styles.formControl}
+            id="signup-first-name"
+            name="first_name"
+            label="First Name"
+            type="text"
+            component={renderField}
+            validate={[required]}
+          />
+        </ItemGrid>
+        <ItemGrid xs={12} sm={12} md={4}>
+          <Field
+            required
+            fullWidth
+            formControl={styles.formControl}
+            id="signup-last-name"
+            name="last_name"
+            label="Last Name"
+            type="text"
+            component={renderField}
+            validate={[required]}
+          />
+        </ItemGrid>
+        <ItemGrid xs={12} sm={12} md={4}>
+          <Field
+            fullWidth
+            formControl={styles.formControl}
+            id="signup-contact-number"
+            name="contact_number"
+            label="Contact Number"
+            type="text"
+            component={renderField}
+          />
+        </ItemGrid>
+        <ItemGrid xs={12} sm={12} md={4}>
+          <Button
+            style={styles.button}
+            color="primary"
+            type="submit"
+            onClick={this.handleSubmit}
+            disabled={submitting}
+          >
+            Register Recruiter
+          </Button>
+        </ItemGrid>
+      </Grid>
     </form>
   );
 };

@@ -1,7 +1,7 @@
 // module imports
 import React from 'react';
 import FlexView from 'react-flexview';
-import TextField from 'material-ui/TextField';
+import { CustomInput } from 'components';
 
 // local imports
 
@@ -26,21 +26,25 @@ export const alphaNumeric = value =>
     : undefined;
 
 export const renderField = ({
+  formControl,
   input,
   label,
   type,
   required,
+  fullWidth,
   meta: { touched, error, warning }
 }) => (
   <FlexView grow style={{ marginBottom: 0 }}>
     <FlexView grow>
-      <TextField
-        {...input}
-        required={required}
+      <CustomInput
+        inputProps={{ ...input, type: type }}
+        formControlProps={{
+          ...formControl,
+          required: required,
+          fullWidth: fullWidth
+        }}
         error={Boolean(touched && error)}
-        label={Boolean(touched && error) ? label + ' - ' + error : label}
-        type={type}
-        fullWidth
+        labelText={Boolean(touched && error) ? label + ' - ' + error : label}
       />
     </FlexView>
   </FlexView>
