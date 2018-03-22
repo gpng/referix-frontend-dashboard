@@ -7,6 +7,7 @@ import Maps from 'views/Maps/Maps.js';
 import NotificationsPage from 'views/Notifications/Notifications.js';
 import UserManagement from 'views/UserManagement/UserManagement';
 import JobManagement from 'views/JobManagement/JobManagement';
+import JobSearch from 'views/JobSearch/JobSearch';
 
 import {
   Dashboard,
@@ -43,6 +44,14 @@ const appRoutes = [
     icon: Work,
     component: JobManagement,
     access: 4 // admin only
+  },
+  {
+    path: '/searchjobs',
+    sidebarName: 'Search Jobs',
+    navbarName: 'Job Search',
+    icon: Work,
+    component: JobSearch,
+    access: 2 // recruiter only
   },
   {
     path: '/profile',
