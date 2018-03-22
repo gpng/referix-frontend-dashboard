@@ -55,6 +55,7 @@ export const putJob = formData => async dispatch => {
   delete req.user_id;
   delete req.created_at;
   delete req.updated_at;
+  delete req.recruiters_applied;
 
   [err, res] = await to(axios.put(url, req, config));
   if (err) {
@@ -66,7 +67,7 @@ export const putJob = formData => async dispatch => {
   if (isSuccess(res.data)) {
     return { success: true };
   } else {
-    return { success: false, message: res.data.error_description };
+    return { success: false, message: res.data.error.text };
   }
 };
 

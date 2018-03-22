@@ -1,15 +1,14 @@
 // module imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { Field, reduxForm } from 'redux-form';
-import { renderField, required } from 'components/Forms/FormFieldValidation';
-import Button from 'material-ui/Button';
-import Chip from 'material-ui/Chip';
-import Hidden from 'material-ui/Hidden';
-import TextField from 'material-ui/TextField';
-import FlexView from 'react-flexview';
+
+import { Chip, Hidden, Grid } from 'material-ui';
 
 // local imports
+import { renderField, required } from 'components/Forms/FormFieldValidation';
+import { Button, ItemGrid, CustomInput } from 'components';
 
 // style imports
 
@@ -19,6 +18,11 @@ const styles = {
   },
   chip: {
     margin: 4
+  },
+  formControl: {
+    style: {
+      margin: 0
+    }
   }
 };
 
@@ -101,109 +105,167 @@ class PostJobForm extends Component {
         className="form-horizontal"
         onSubmit={handleSubmit}
       >
-        <Field
-          required
-          id="postjob-job-title"
-          name="job_title"
-          label="Job Title"
-          type="text"
-          component={renderField}
-          validate={[required]}
-        />
-        <Field
-          required
-          id="postjob-job-type"
-          name="job_type"
-          label="Job Type"
-          type="text"
-          component={renderField}
-          validate={[required]}
-        />
-        <Field
-          required
-          id="postjob-job-sector"
-          name="job_sector"
-          label="Job Sector"
-          type="text"
-          component={renderField}
-          validate={[required]}
-        />
-        <Field
-          required
-          id="postjob-job-skills"
-          name="job_skills"
-          label="Job Skills"
-          type="text"
-          component={renderField}
-          validate={[required]}
-        />
-        <Field
-          required
-          id="postjob-years-of-experience"
-          name="years_of_experience"
-          label="Years of Experience"
-          type="number"
-          component={renderField}
-          validate={[required]}
-        />
-        <Field
-          required
-          id="postjob-salary"
-          name="salary"
-          label="Salary"
-          type="text"
-          component={renderField}
-          validate={[required]}
-        />
-        <FlexView grow>
-          <FlexView grow>
-            <TextField
-              label="Compensation & Benefits"
-              value={this.state.txtChipValue}
-              onChange={this.handleChange}
-              onKeyPress={ev => {
-                if (ev.key === 'Enter') {
-                  ev.preventDefault();
-                  this.handleClick(ev);
+        <Grid container direction="column">
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-job-title"
+              name="job_title"
+              label="Job Title"
+              type="text"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-job-type"
+              name="job_type"
+              label="Job Type"
+              type="text"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-job-sector"
+              name="job_sector"
+              label="Job Sector"
+              type="text"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-job-skills"
+              name="job_skills"
+              label="Job Skills"
+              type="text"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-years-of-experience"
+              name="years_of_experience"
+              label="Years of Experience"
+              type="number"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-salary"
+              name="salary"
+              label="Salary"
+              type="text"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <CustomInput
+              labelText="Compensation & Benefits"
+              formControlProps={{
+                fullWidth: true,
+                style: {
+                  margin: 0
                 }
               }}
+              inputProps={{
+                value: this.state.txtChipValue,
+                onKeyPress: ev => {
+                  if (ev.key === 'Enter') {
+                    ev.preventDefault();
+                    this.handleClick(ev);
+                  }
+                },
+                onChange: this.handleChange
+              }}
             />
-          </FlexView>
-          <FlexView shrink>
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
             <Button
-              variant="raised"
+              color="info"
               onClick={this.handleClick}
               style={styles.button}
-              fullWidth
             >
               Add
             </Button>
-          </FlexView>
-        </FlexView>
-        <FlexView grow wrap>
-          {this.renderChips()}
-        </FlexView>
-        <Hidden xsUp>
-          <Field
-            required
-            id="postjob-compensation-benefits"
-            name="compensation_benefits"
-            label="Compensation & Benefits"
-            type="text"
-            component={renderField}
-            validate={[required]}
-          />
-        </Hidden>
-        <Button
-          style={styles.button}
-          variant="raised"
-          color="primary"
-          type="submit"
-          onClick={handleSubmit}
-          disabled={submitting}
-        >
-          Post Job
-        </Button>
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            {this.renderChips()}
+            <Hidden xsUp>
+              <Field
+                required
+                id="postjob-compensation-benefits"
+                name="compensation_benefits"
+                label="Compensation & Benefits"
+                type="text"
+                component={renderField}
+                validate={[required]}
+              />
+            </Hidden>
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-recruiter-limit"
+              name="recruiter_limit"
+              label="Recruiter Limit (1 - 10)"
+              type="number"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Field
+              required
+              fullWidth
+              formControl={styles.formControl}
+              id="postjob-cv-limit"
+              name="cv_limit"
+              label="CV Limit per recruiter (1 - 10)"
+              type="number"
+              component={renderField}
+              validate={[required]}
+            />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={12} md={12}>
+            <Button
+              style={styles.button}
+              color="primary"
+              type="submit"
+              onClick={handleSubmit}
+              disabled={submitting}
+            >
+              Post Job
+            </Button>
+          </ItemGrid>
+        </Grid>
       </form>
     );
   }

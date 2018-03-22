@@ -67,6 +67,12 @@ import Table from './Table/Table.js';
 import Tasks from './Tasks/Tasks.js';
 
 // ##############################
+// // // Pagination
+// #############################
+
+import Pagination from './Pagination/Pagination';
+
+// ##############################
 // // // Typography
 // #############################
 
@@ -110,6 +116,8 @@ export {
   Table,
   // Tasks
   Tasks,
+  // Pagination
+  Pagination,
   // Typography
   P,
   Quote,

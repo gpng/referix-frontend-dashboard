@@ -6,6 +6,7 @@ import Icons from 'views/Icons/Icons.js';
 import Maps from 'views/Maps/Maps.js';
 import NotificationsPage from 'views/Notifications/Notifications.js';
 import UserManagement from 'views/UserManagement/UserManagement';
+import JobManagement from 'views/JobManagement/JobManagement';
 
 import {
   Dashboard,
@@ -14,7 +15,8 @@ import {
   LibraryBooks,
   BubbleChart,
   LocationOn,
-  Notifications
+  Notifications,
+  Work
 } from 'material-ui-icons';
 
 const appRoutes = [
@@ -33,6 +35,14 @@ const appRoutes = [
     icon: Person,
     component: UserManagement,
     access: 1 // admin only
+  },
+  {
+    path: '/managejobs',
+    sidebarName: 'Your Jobs',
+    navbarName: 'Jobs Management',
+    icon: Work,
+    component: JobManagement,
+    access: 4 // admin only
   },
   {
     path: '/profile',
