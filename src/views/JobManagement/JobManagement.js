@@ -1,7 +1,7 @@
 import React from 'react';
 import { JobManagementContainer } from 'containers/JobManagement';
 
-class UserManagement extends React.Component {
+class JobManagement extends React.Component {
   render() {
     return (
       <div>
@@ -11,4 +11,4 @@ class UserManagement extends React.Component {
   }
 }
 
-export default UserManagement;
+export default JobManagement;
