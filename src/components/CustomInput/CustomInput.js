@@ -1,10 +1,10 @@
-import React from "react";
-import { withStyles, FormControl, InputLabel, Input } from "material-ui";
-import { Clear, Check } from "material-ui-icons";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import { withStyles, FormControl, InputLabel, Input } from 'material-ui';
+import { Clear, Check } from 'material-ui-icons';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import customInputStyle from "variables/styles/customInputStyle";
+import customInputStyle from 'variables/styles/customInputStyle';
 
 function CustomInput({ ...props }) {
   const {
@@ -19,8 +19,8 @@ function CustomInput({ ...props }) {
   } = props;
 
   const labelClasses = cx({
-    [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error
+    [' ' + classes.labelRootError]: error,
+    [' ' + classes.labelRootSuccess]: success && !error
   });
   const inkbarClasses = cx({
     [classes.inkbarError]: error,
@@ -33,7 +33,11 @@ function CustomInput({ ...props }) {
   return (
     <FormControl
       {...formControlProps}
-      className={formControlProps.className + " " + classes.formControl}
+      className={
+        formControlProps
+          ? formControlProps.className + ' ' + classes.formControl
+          : null
+      }
     >
       {labelText !== undefined ? (
         <InputLabel
@@ -55,9 +59,9 @@ function CustomInput({ ...props }) {
         {...inputProps}
       />
       {error ? (
-        <Clear className={classes.feedback + " " + classes.labelRootError} />
+        <Clear className={classes.feedback + ' ' + classes.labelRootError} />
       ) : success ? (
-        <Check className={classes.feedback + " " + classes.labelRootSuccess} />
+        <Check className={classes.feedback + ' ' + classes.labelRootSuccess} />
       ) : null}
     </FormControl>
   );

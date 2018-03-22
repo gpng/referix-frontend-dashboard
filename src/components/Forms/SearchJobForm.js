@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { renderField } from 'components/Forms/FormFieldValidation';
-import Button from 'material-ui/Button';
+import { Button } from 'components';
 
 // local imports
 
@@ -11,6 +11,11 @@ import Button from 'material-ui/Button';
 const styles = {
   button: {
     marginTop: 12
+  },
+  formControl: {
+    style: {
+      margin: 0
+    }
   }
 };
 
@@ -25,6 +30,8 @@ class SearchJobForm extends Component {
         onSubmit={handleSubmit}
       >
         <Field
+          fullWidth
+          formControl={styles.formControl}
           id="search-job-text"
           name="search_job_text"
           label="Search for jobs"
@@ -34,7 +41,6 @@ class SearchJobForm extends Component {
         />
         <Button
           style={styles.button}
-          variant="raised"
           color="primary"
           type="submit"
           onClick={this.handleSubmit}

@@ -15,6 +15,11 @@ import Button from 'material-ui/Button';
 const styles = {
   button: {
     marginTop: 12
+  },
+  formControl: {
+    style: {
+      margin: 0
+    }
   }
 };
 
@@ -29,6 +34,8 @@ let CompanySignupForm = props => {
     >
       <Field
         required
+        fullWidth
+        formControl={styles.formControl}
         id="signup-email"
         name="email"
         label="Email"
@@ -38,6 +45,8 @@ let CompanySignupForm = props => {
       />
       <Field
         required
+        fullWidth
+        formControl={styles.formControl}
         id="signup-password"
         name="password"
         label="Password"
@@ -46,6 +55,8 @@ let CompanySignupForm = props => {
         validate={[required]}
       />
       <Field
+        fullWidth
+        formControl={styles.formControl}
         id="signup-company-name"
         name="company_name"
         label="Company Name"

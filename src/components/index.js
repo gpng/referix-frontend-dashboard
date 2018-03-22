@@ -7,6 +7,7 @@ import ProfileCard from './Cards/ProfileCard.js';
 import RegularCard from './Cards/RegularCard.js';
 import StatsCard from './Cards/StatsCard.js';
 import TasksCard from './Cards/TasksCard.js';
+import UserManagementCard from './Cards/UserManagementCard';
 
 // ##############################
 // // // CustomButtons
@@ -66,6 +67,12 @@ import Table from './Table/Table.js';
 import Tasks from './Tasks/Tasks.js';
 
 // ##############################
+// // // Pagination
+// #############################
+
+import Pagination from './Pagination/Pagination';
+
+// ##############################
 // // // Typography
 // #############################
 
@@ -87,6 +94,7 @@ export {
   RegularCard,
   StatsCard,
   TasksCard,
+  UserManagementCard,
   // CustomButtons
   Button,
   IconButton,
@@ -108,6 +116,8 @@ export {
   Table,
   // Tasks
   Tasks,
+  // Pagination
+  Pagination,
   // Typography
   P,
   Quote,

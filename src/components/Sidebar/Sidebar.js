@@ -14,6 +14,8 @@ import {
 
 import { HeaderLinks } from 'components';
 
+import { validateAccess } from 'actions/utilities';
+
 import sidebarStyle from 'variables/styles/sidebarStyle.js';
 
 const Sidebar = ({ ...props }) => {
@@ -25,6 +27,7 @@ const Sidebar = ({ ...props }) => {
   var links = (
     <List className={classes.list}>
       {routes.map((prop, key) => {
+        if (!validateAccess(prop.access)) return null;
         if (prop.redirect) return null;
         const listItemClasses = cx({
           [' ' + classes[color]]: activeRoute(prop.path)
