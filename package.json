@@ -9,6 +9,7 @@
     "axios": "^0.18.0",
     "chartist": "^0.10.1",
     "classnames": "^2.2.5",
+    "concurrently": "^3.5.1",
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.5",
