@@ -22,10 +22,10 @@ function CustomInput({ ...props }) {
     [' ' + classes.labelRootError]: error,
     [' ' + classes.labelRootSuccess]: success && !error
   });
-  const inkbarClasses = cx({
-    [classes.inkbarError]: error,
-    [classes.inkbarSuccess]: success && !error,
-    [classes.inkbar]: !success && !error
+  const underlineClasses = cx({
+    [classes.underlineError]: error,
+    [classes.underlineSuccess]: success && !error,
+    [classes.underline]: !success && !error
   });
   const marginTop = cx({
     [classes.marginTop]: labelText === undefined
@@ -52,8 +52,7 @@ function CustomInput({ ...props }) {
         classes={{
           root: marginTop,
           disabled: classes.disabled,
-          underline: classes.underline,
-          inkbar: inkbarClasses
+          underline: underlineClasses
         }}
         id={id}
         {...inputProps}

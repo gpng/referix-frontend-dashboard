@@ -22,16 +22,26 @@ const styles = {
 
 class RecruiterProfileUpdateForm extends React.Component {
   componentDidMount = () => {
-    var requiredDetails = {
-      first_name: this.props.userDetails.first_name,
-      last_name: this.props.userDetails.last_name,
-      contact_number: this.props.userDetails.contact_number
+    this.initializeDetails(this.props.userDetails);
+  };
+
+  componentWillReceiveProps = nextProps => {
+    if (this.props.userDetails !== nextProps.userDetails) {
+      this.initializeDetails(nextProps.userDetails);
+    }
+  };
+
+  initializeDetails = userDetails => {
+    let requiredDetails = {
+      first_name: userDetails.first_name,
+      last_name: userDetails.last_name,
+      contact_number: userDetails.contact_number
     };
     this.props.initialize(requiredDetails);
   };
 
   render() {
-    const { handleSubmit, submitting, pristine, reset } = this.props;
+    const { handleSubmit, submitting } = this.props;
     return (
       <form
         id="profile-management-form"
@@ -92,11 +102,20 @@ class RecruiterProfileUpdateForm extends React.Component {
                           validate={[required]}
                         />
                       </ItemGrid>
+                      <ItemGrid xs={12} sm={12} md={6}>
+                        <CustomInput
+                          labelText="Last Name"
+                          id="last-name"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                        />
+                      </ItemGrid>
                     </Grid>
                     <Grid container />
-                    {/*<Grid container>
+                    <Grid container>
                       <ItemGrid xs={12} sm={12} md={12}>
-                        <InputLabel style={{ color: "#AAAAAA" }}>
+                        <InputLabel style={{ color: '#AAAAAA' }}>
                           About me
                         </InputLabel>
                         <CustomInput

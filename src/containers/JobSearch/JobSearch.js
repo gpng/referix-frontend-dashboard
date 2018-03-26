@@ -1,6 +1,5 @@
 // module imports
 import React, { Component } from 'react';
-import FlexView from 'react-flexview';
 // import Fuse from 'fuse.js';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';

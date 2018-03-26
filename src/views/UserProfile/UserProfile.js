@@ -7,7 +7,7 @@ import * as actions from "actions";
 import { toastr } from "react-redux-toastr";
 import { cleanObject } from "actions/utilities";
 import sysParams from 'sys_params';
- 
+
 
 // USE THIS AS THE MAIN PROFILE RENDERING TO SELECT BETWEEN RECRUITER AND COMPANY
 /**
@@ -67,12 +67,8 @@ class UserProfile extends React.Component {
   };
 
   render() {
-    return <FlexView>{this.renderForm()}</FlexView>;
+    return <UserProfileContainer />;
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { user: auth.user };
-}
-
-export default connect(mapStateToProps, actions)(UserProfile);
+export default UserProfile;

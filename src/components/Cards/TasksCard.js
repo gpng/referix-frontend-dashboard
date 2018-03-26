@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   withStyles,
   Card,
@@ -8,14 +8,14 @@ import {
   Typography,
   Tabs,
   Tab
-} from "material-ui";
-import { BugReport, Code, Cloud } from "material-ui-icons";
+} from 'material-ui';
+import { BugReport, Code, Cloud } from 'material-ui-icons';
 
-import { Tasks } from "components";
+import { Tasks } from 'components';
 
-import { bugs, website, server } from "variables/general";
+import { bugs, website, server } from 'variables/general';
 
-import tasksCardStyle from "variables/styles/tasksCardStyle";
+import tasksCardStyle from 'variables/styles/tasksCardStyle';
 
 class TasksCard extends React.Component {
   state = {
@@ -38,42 +38,42 @@ class TasksCard extends React.Component {
           action={
             <Tabs
               classes={{
-                flexContainer: classes.tabsContainer
+                flexContainer: classes.tabsContainer,
+                indicator: classes.displayNone
               }}
               value={this.state.value}
               onChange={this.handleChange}
-              indicatorClassName={classes.displayNone}
               textColor="inherit"
             >
               <Tab
                 classes={{
                   wrapper: classes.tabWrapper,
-                  rootLabelIcon: classes.labelIcon,
+                  labelIcon: classes.labelIcon,
                   label: classes.label,
-                  rootInheritSelected: classes.rootInheritSelected
+                  textColorInheritSelected: classes.textColorInheritSelected
                 }}
                 icon={<BugReport className={classes.tabIcon} />}
-                label={"Bugs"}
+                label={'Bugs'}
               />
               <Tab
                 classes={{
                   wrapper: classes.tabWrapper,
-                  rootLabelIcon: classes.labelIcon,
+                  labelIcon: classes.labelIcon,
                   label: classes.label,
-                  rootInheritSelected: classes.rootInheritSelected
+                  textColorInheritSelected: classes.textColorInheritSelected
                 }}
                 icon={<Code className={classes.tabIcon} />}
-                label={"Website"}
+                label={'Website'}
               />
               <Tab
                 classes={{
                   wrapper: classes.tabWrapper,
-                  rootLabelIcon: classes.labelIcon,
+                  labelIcon: classes.labelIcon,
                   label: classes.label,
-                  rootInheritSelected: classes.rootInheritSelected
+                  textColorInheritSelected: classes.textColorInheritSelected
                 }}
                 icon={<Cloud className={classes.tabIcon} />}
-                label={"Server"}
+                label={'Server'}
               />
             </Tabs>
           }
