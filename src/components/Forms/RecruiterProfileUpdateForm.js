@@ -41,7 +41,7 @@ class RecruiterProfileUpdateForm extends React.Component {
   };
 
   render() {
-    const { handleSubmit, submitting } = this.props;
+    const { handleSubmit, submitting, pristine, reset  } = this.props;
     return (
       <form
         id="profile-management-form"
@@ -102,18 +102,9 @@ class RecruiterProfileUpdateForm extends React.Component {
                           validate={[required]}
                         />
                       </ItemGrid>
-                      <ItemGrid xs={12} sm={12} md={6}>
-                        <CustomInput
-                          labelText="Last Name"
-                          id="last-name"
-                          formControlProps={{
-                            fullWidth: true
-                          }}
-                        />
-                      </ItemGrid>
                     </Grid>
                     <Grid container />
-                    <Grid container>
+                    {/*<Grid container>
                       <ItemGrid xs={12} sm={12} md={12}>
                         <InputLabel style={{ color: '#AAAAAA' }}>
                           About me

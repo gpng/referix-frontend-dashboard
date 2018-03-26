@@ -31,8 +31,19 @@ const styles = {
  * @param {function} handleSubmit Submit form handler
  */
 class CompanyProfileUpdateForm extends React.Component {
+
   componentDidMount = () => {
-    var requiredDetails = {
+    this.initializeDetails(this.props.userDetails);
+  };
+
+  componentWillReceiveProps = nextProps => {
+    if (this.props.userDetails !== nextProps.userDetails) {
+      this.initializeDetails(nextProps.userDetails);
+    }
+  };
+
+  initializeDetails = userDetails => {
+    let requiredDetails = {
       company_size: this.props.userDetails.company_size,
       company_type: this.props.userDetails.company_type,
       company_website: this.props.userDetails.company_website,
