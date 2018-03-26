@@ -177,8 +177,8 @@ export const getAllAppliedJobs = () => async dispatch => {
       message: err.response.data.error_description
     };
   }
-  if (isSuccess(res.data)) {
-    return { success: true, data: res.data.data };
+  if (isSuccess(res.data) && res.data && res.data.data && res.data.data[0]) {
+    return { success: true, data: res.data.data[0] };
   } else {
     return { success: false, message: res.data.error.text };
   }

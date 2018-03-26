@@ -18,7 +18,8 @@ import {
   // BubbleChart,
   // LocationOn,
   // Notifications,
-  Work
+  Work,
+  Search
 } from 'material-ui-icons';
 
 const appRoutes = [
@@ -58,7 +59,7 @@ const appRoutes = [
     path: '/searchjobs',
     sidebarName: 'Search Jobs',
     navbarName: 'Job Search',
-    icon: Work,
+    icon: Search,
     component: JobSearch,
     access: 2 // recruiter only
   },

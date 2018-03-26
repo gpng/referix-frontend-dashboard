@@ -27,7 +27,9 @@ class JobsAppliedContainer extends Component {
   getAppliedJobs = async () => {
     const res = await this.props.getAllAppliedJobs();
     if (res.success) {
-      this.setState({ jobs: orderBy(res.data, ['start_time'], ['desc']) });
+      this.setState({
+        jobs: orderBy(res.data.results, ['start_time'], ['desc'])
+      });
     }
   };
 
