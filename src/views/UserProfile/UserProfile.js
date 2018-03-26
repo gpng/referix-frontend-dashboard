@@ -1,70 +1,10 @@
-import React from "react";
-import CompanyProfileUpdateForm from "components/Forms/CompanyProfileUpdateForm";
-import RecruiterProfileUpdateForm from "views/UserProfile/RecruiterProfileUpdateForm.js";
-import FlexView from "react-flexview";
-import { connect } from 'react-redux';
-import * as actions from "actions";
-import { toastr } from "react-redux-toastr";
-import { cleanObject } from "actions/utilities";
+import React from 'react';
+import { UserProfileContainer } from 'containers/UserProfile';
 
-
-// USE THIS AS THE MAIN PROFILE RENDERING TO SELECT BETWEEN RECRUITER AND COMPANY
-/**
- * Update recruiter profile form
- * @param {object} userDetails Details to be initialized into form
- * @param {function} handleSubmit Submit form handler
- */
 class UserProfile extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      userDetails: {}
-    };
-  }
-
-  componentWillMount = () => {
-    this.getCurrentUser();
-  };
-
-  getCurrentUser = async() => {
-    if (!this.props.user) {
-      const res = await this.props.getCurrentUser();
-      if (res.success) {
-        return this.setState({ userDetails: this.props.user });
-      }
-    }
-    return this.setState({ userDetails: this.props.user });
-  };
-
-  handleSubmit = async values => {
-    values = cleanObject(values);
-    const res = await this.props.updateProfile(values);
-    if (res.success) {
-      toastr.success("Profile Updated");
-      return this.props.getCurrentUser();
-    } else {
-      toastr.error("Validation Failed", res.message);
-    }
-  };
-
-
-
-  renderForm = () => {
-    return (
-      <RecruiterProfileUpdateForm
-        userDetails={this.state.userDetails}
-        onSubmit={this.handleSubmit}
-      />
-    );
-  };
-
   render() {
-    return <FlexView>{this.renderForm()}</FlexView>;
+    return <UserProfileContainer />;
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { user: auth.user };
-}
-
-export default connect(mapStateToProps, actions)(UserProfile);
+export default UserProfile;
