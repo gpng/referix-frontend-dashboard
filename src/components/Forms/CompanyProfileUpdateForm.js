@@ -1,9 +1,19 @@
 // module imports
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { renderField, required } from 'components/Forms/FormFieldValidation';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import React from "react";
+import { Grid, InputLabel } from "material-ui";
+import * as actions from "actions";
+import {
+  ProfileCard,
+  RegularCard,
+  Button,
+  CustomInput,
+  ItemGrid
+} from "components";
+import { Field, reduxForm } from "redux-form";
+import avatar from "assets/img/faces/marc.jpg";
+import { renderField, required } from "components/Forms/FormFieldValidation";
+import TextField from "material-ui/TextField";
+
 // local imports
 
 // style imports
@@ -20,7 +30,7 @@ const styles = {
  * @param {object} userDetails Details to be initialized into form
  * @param {function} handleSubmit Submit form handler
  */
-class CompanyProfileUpdateForm extends Component {
+class CompanyProfileUpdateForm extends React.Component {
   componentDidMount = () => {
     var requiredDetails = {
       company_size: this.props.userDetails.company_size,
@@ -40,88 +50,169 @@ class CompanyProfileUpdateForm extends Component {
         id="profile-management-form"
         className="form-horizontal"
         onSubmit={handleSubmit}
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
       >
-        <TextField
-          label="Company Name"
-          defaultValue={this.props.userDetails.company_name}
-          fullWidth
-          disabled
-        />
+        <div>
+          <Grid container>
+            <ItemGrid xs={12} sm={12} md={8}>
+              <RegularCard
+                cardTitle="Edit Profile"
+                cardSubtitle="Complete your profile"
+                content={
+                  <div>
+                    <Grid container>
+                      <ItemGrid xs={12} sm={12}>
+                        <TextField
+                          fullWidth
+                          label="Email"
+                          defaultValue={this.props.userDetails.email}
+                          disabled
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid style={{marginTop:20}}/>
+                    <Grid container>
+                      <ItemGrid>
+                        <TextField
+                          disabled
+                          label="Company Name"
+                          defaultValue={this.props.userDetails.company_name}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
+                        style={{fontSize:18}}
+                          fullWidth
+                          id="company-size"
+                          name="company_size"
+                          label="Company Size"
+                          component={renderField}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
+                          fullWidth
+                          id="company-type"
+                          name="company_type"
+                          label="Company Type"
+                          component={renderField}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
 
-        <Field
-          fullWidth
-          id="company-size"
-          name="company_size"
-          label="Company Size"
-          component={renderField}
-          validate={[required]}
-        />
+                          fullWidth
+                          id="company-website"
+                          name="company_website"
+                          label="Company Website"
+                          component={renderField}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
 
-        <Field
-          fullWidth
-          id="company-type"
-          name="company_type"
-          label="Company Type"
-          component={renderField}
-          validate={[required]}
-        />
+                          fullWidth
+                          id="company-about"
+                          name="company_about"
+                          label="Company About"
+                          component={renderField}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
 
-        <Field
-          fullWidth
-          id="company-website"
-          name="company_website"
-          label="Company Website"
-          component={renderField}
-          validate={[required]}
-        />
+                          fullWidth
+                          id="company-location"
+                          name="company_location"
+                          label="Company Location"
+                          component={renderField}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
 
-        <Field
-          fullWidth
-          id="company-about"
-          name="company_about"
-          label="Company About"
-          component={renderField}
-          validate={[required]}
-        />
-
-        <Field
-          fullWidth
-          id="company-location"
-          name="company_location"
-          label="Company Location"
-          component={renderField}
-          validate={[required]}
-        />
-        <Field
-          fullWidth
-          id="company-contact-number"
-          name="company_contact_number"
-          label="Company Contact Number"
-          component={renderField}
-          validate={[required]}
-        />
-
-        <Button
-          style={styles.button}
-          variant="raised"
-          color="primary"
-          type="submit"
-          onClick={this.handleSubmit}
-          disabled={submitting}
-        >
-          Save
-        </Button>
-        <Button
-          style={styles.button}
-          variant="raised"
-          color="primary"
-          onClick={reset}
-          // code in onclick will return to default
-          disabled={pristine || submitting}
-        >
-          Reset
-        </Button>
+                          fullWidth
+                          id="company-contact-number"
+                          name="company_contact_number"
+                          label="Company Contact Number"
+                          component={renderField}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container />
+                    { /*<Grid container>
+                      <ItemGrid xs={12} sm={12} md={12}>
+                        <InputLabel style={{ color: "#AAAAAA" }}>
+                          About me
+                        </InputLabel>
+                        <CustomInput
+                          labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                          id="about-me"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          inputProps={{
+                            multiline: true,
+                            rows: 5
+                          }}
+                        />
+                      </ItemGrid>
+                    </Grid> */}
+                  </div>
+                }
+                footer={
+                  <div>
+                    <Button
+                      style={styles.button}
+                      variant="raised"
+                      color="primary"
+                      type="submit"
+                      onClick={handleSubmit}
+                      disabled={submitting}
+                    >
+                      Update Profile
+                    </Button>
+                    <Button
+                      style={styles.button}
+                      variant="raised"
+                      color="primary"
+                      type="button"
+                      onClick={reset}
+                      disabled={pristine || submitting}
+                    >
+                      Reset
+                    </Button>
+                  </div>
+                }
+              />
+            </ItemGrid>
+            <ItemGrid xs={12} sm={12} md={4}>
+              <ProfileCard
+                avatar={avatar}
+                subtitle="CEO / CO-FOUNDER"
+                title="Alec Thompson"
+                description="Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is..."
+                footer={
+                  <Button color="primary" round>
+                    Follow
+                  </Button>
+                }
+              />
+            </ItemGrid>
+          </Grid>
+        </div>
       </form>
     );
   }
@@ -129,7 +220,7 @@ class CompanyProfileUpdateForm extends Component {
 
 CompanyProfileUpdateForm = reduxForm({
   // a unique name for the form
-  form: 'company_profile_update'
+  form: "company_profile_update"
 })(CompanyProfileUpdateForm);
 
 export default CompanyProfileUpdateForm;

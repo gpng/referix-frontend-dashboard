@@ -1,12 +1,17 @@
-// module imports
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { renderField, required } from 'components/Forms/FormFieldValidation';
-import Button from 'material-ui/Button';
-
-// local imports
-
-// style imports
+import React from "react";
+import { Grid, InputLabel } from "material-ui";
+import * as actions from "actions";
+import {
+  ProfileCard,
+  RegularCard,
+  Button,
+  CustomInput,
+  ItemGrid
+} from "components";
+import { Field, reduxForm } from "redux-form";
+import avatar from "assets/img/faces/marc.jpg";
+import { renderField, required } from "components/Forms/FormFieldValidation";
+import TextField from "material-ui/TextField";
 
 const styles = {
   button: {
@@ -15,12 +20,7 @@ const styles = {
   }
 };
 
-/**
- * Update recruiter profile form
- * @param {object} userDetails Details to be initialized into form
- * @param {function} handleSubmit Submit form handler
- */
-class RecruiterProfileUpdateForm extends Component {
+class RecruiterProfileUpdateForm extends React.Component {
   componentDidMount = () => {
     var requiredDetails = {
       first_name: this.props.userDetails.first_name,
@@ -37,70 +37,131 @@ class RecruiterProfileUpdateForm extends Component {
         id="profile-management-form"
         className="form-horizontal"
         onSubmit={handleSubmit}
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
       >
-        {/* <FormControl fullWidth disabled>
-        <InputLabel>Email</InputLabel>
-        <Input id="name-disabled" value={userDetails.email} />
-        <FormHelperText>Your Email Address</FormHelperText>
-      </FormControl> */}
-        <Field
-          required
-          fullWidth
-          id="first-name"
-          name="first_name"
-          label="First Name"
-          component={renderField}
-          validate={[required]}
-        />
-
-        <Field
-          required
-          fullWidth
-          id="last-name"
-          name="last_name"
-          label="Last Name"
-          component={renderField}
-          validate={[required]}
-        />
-
-        <Field
-          fullWidth
-          required
-          id="contact-number"
-          name="contact_number"
-          label="Contact Number"
-          component={renderField}
-        />
-        <Button
-          style={styles.button}
-          variant="raised"
-          color="primary"
-          type="submit"
-          onClick={handleSubmit}
-          disabled={submitting}
-        >
-          Save
-        </Button>
-        <Button
-          style={styles.button}
-          variant="raised"
-          color="primary"
-          type="button"
-          onClick={reset}
-          // code in onclick will return to default
-          disabled={pristine || submitting}
-        >
-          Reset
-        </Button>
+        <div>
+          <Grid container>
+            <ItemGrid xs={12} sm={12} md={8}>
+              <RegularCard
+                cardTitle="Edit Profile"
+                cardSubtitle="Complete your profile"
+                content={
+                  <div>
+                    <Grid container>
+                      <ItemGrid xs={12} sm={12}>
+                        <TextField
+                          fullWidth
+                          label="Email"
+                          defaultValue={this.props.userDetails.email}
+                          disabled
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
+                          required
+                          fullWidth
+                          id="first-name"
+                          name="first_name"
+                          label="First Name"
+                          component={renderField}
+                          validate={[required]}
+                        />
+                      </ItemGrid>
+                      <ItemGrid>
+                        <Field
+                          required
+                          fullWidth
+                          id="last-name"
+                          name="last_name"
+                          label="Last Name"
+                          component={renderField}
+                          validate={[required]}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container>
+                      <ItemGrid>
+                        <Field
+                          required
+                          id="contact-number"
+                          name="contact_number"
+                          label="Contact Number"
+                          component={renderField}
+                          validate={[required]}
+                        />
+                      </ItemGrid>
+                    </Grid>
+                    <Grid container />
+                    {/*<Grid container>
+                      <ItemGrid xs={12} sm={12} md={12}>
+                        <InputLabel style={{ color: "#AAAAAA" }}>
+                          About me
+                        </InputLabel>
+                        <CustomInput
+                          labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                          id="about-me"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          inputProps={{
+                            multiline: true,
+                            rows: 5
+                          }}
+                        />
+                      </ItemGrid>
+                    </Grid>*/}
+                  </div>
+                }
+                footer={
+                  <div>
+                    <Button
+                      style={styles.button}
+                      variant="raised"
+                      color="primary"
+                      type="submit"
+                      onClick={handleSubmit}
+                      disabled={submitting}
+                    >
+                      Update Profile
+                    </Button>
+                    <Button
+                      style={styles.button}
+                      variant="raised"
+                      color="primary"
+                      type="button"
+                      onClick={reset}
+                      disabled={pristine || submitting}
+                    >
+                      Reset
+                    </Button>
+                  </div>
+                }
+              />
+            </ItemGrid>
+            <ItemGrid xs={12} sm={12} md={4}>
+              <ProfileCard
+                avatar={avatar}
+                subtitle="CEO / CO-FOUNDER"
+                title="Alec Thompson"
+                description="Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is..."
+                footer={
+                  <Button color="primary" round>
+                    Follow
+                  </Button>
+                }
+              />
+            </ItemGrid>
+          </Grid>
+        </div>
       </form>
     );
   }
 }
-
 RecruiterProfileUpdateForm = reduxForm({
   // a unique name for the form
-  form: 'recruiter_profile_update'
+  form: "recruiter_profile_update"
 })(RecruiterProfileUpdateForm);
 
 export default RecruiterProfileUpdateForm;
