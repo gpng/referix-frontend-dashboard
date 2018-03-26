@@ -130,7 +130,8 @@ export const getJobs = formData => async dispatch => {
 /**
  * Apply for a job
  * POST /user/:userId/apply/:jobId
- * @param {*} jobId
+ * @param {uuid} jobId
+ * @param {uuid} userId
  */
 export const applyJob = jobId => async dispatch => {
   let err, res;
@@ -149,10 +150,36 @@ export const applyJob = jobId => async dispatch => {
     };
   }
   if (isSuccess(res.data)) {
-    console.log(res.data.data[0]);
     return { success: true, data: res.data.data[0] };
   } else {
-    console.log(res.data.error.text);
+    return { success: false, message: res.data.error.text };
+  }
+};
+
+/**
+ * Get all recruiter applied jobs
+ * GET /user/:userId/apply
+ * @param {uuid} userId
+ */
+export const getAllAppliedJobs = () => async dispatch => {
+  let err, res;
+  const userID = getUserFromAccessToken().user_id;
+  const url = `/user/${userID}/apply`;
+  const config = {
+    headers: {
+      token: localStorage.getItem('access_token')
+    }
+  };
+  [err, res] = await to(axios.get(url, config));
+  if (err) {
+    return {
+      success: false,
+      message: err.response.data.error_description
+    };
+  }
+  if (isSuccess(res.data)) {
+    return { success: true, data: res.data.data };
+  } else {
     return { success: false, message: res.data.error.text };
   }
 };

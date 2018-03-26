@@ -72,6 +72,7 @@ class CreateUser extends Component {
   handleEditToggle = job => {
     this.setState({ selectedJob: job, editToggle: !this.state.editToggle });
   };
+
   render() {
     return (
       <div>
