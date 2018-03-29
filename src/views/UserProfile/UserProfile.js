@@ -1,12 +1,4 @@
 import React from "react";
-import CompanyProfileUpdateForm from "components/Forms/CompanyProfileUpdateForm";
-import RecruiterProfileUpdateForm from "components/Forms/RecruiterProfileUpdateForm";
-import FlexView from "react-flexview";
-import { connect } from 'react-redux';
-import * as actions from "actions";
-import { toastr } from "react-redux-toastr";
-import { cleanObject } from "actions/utilities";
-import sysParams from 'sys_params';
 import {UserProfileContainer } from "containers/UserProfile/index"
 
 

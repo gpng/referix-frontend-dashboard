@@ -1,23 +1,20 @@
 // module imports
 import React from "react";
-import { Grid, InputLabel } from "material-ui";
-import * as actions from "actions";
+import { Grid } from "material-ui";
 import {
   ProfileCard,
   RegularCard,
   Button,
-  CustomInput,
   ItemGrid
 } from "components";
 import { Field, reduxForm } from "redux-form";
 import avatar from "assets/img/faces/marc.jpg";
-import { renderField, required } from "components/Forms/FormFieldValidation";
+import { renderField } from "components/Forms/FormFieldValidation";
 import TextField from "material-ui/TextField";
 
 // local imports
 
 // style imports
-
 const styles = {
   button: {
     marginTop: 12,
@@ -94,7 +91,6 @@ class CompanyProfileUpdateForm extends React.Component {
                     <Grid container>
                       <ItemGrid>
                         <Field
-                        style={{fontSize:18}}
                           fullWidth
                           id="company-size"
                           name="company_size"

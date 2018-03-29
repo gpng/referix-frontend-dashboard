@@ -7,7 +7,6 @@ import FlexView from 'react-flexview';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
 import { toast } from 'react-toastify';
-import { cleanObject } from 'actions/utilities';
 import sysParams from 'sys_params';
 
 // USE THIS AS THE MAIN PROFILE RENDERING TO SELECT BETWEEN RECRUITER AND COMPANY
@@ -39,7 +38,6 @@ class UserProfileContainer extends React.Component {
   };
 
   handleSubmit = async values => {
-    values = cleanObject(values);
     const res = await this.props.updateProfile(values);
     if (res.success) {
       toast.success('Profile Updated');
