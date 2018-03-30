@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 import {
-   CompanyProfileUpdateForm,
-  RecruiterProfileUpdateForm
-} from 'components/Forms';
-import FlexView from 'react-flexview';
-import { connect } from 'react-redux';
-import * as actions from 'actions';
-import { toast } from 'react-toastify';
-import sysParams from 'sys_params';
+  CompanyProfileUpdateForm,
+  RecruiterProfileUpdateForm,
+  PasswordChangeForm
+} from "components/Forms";
+import FlexView from "react-flexview";
+import { connect } from "react-redux";
+import * as actions from "actions";
+import { toast } from "react-toastify";
+import sysParams from "sys_params";
 
 // USE THIS AS THE MAIN PROFILE RENDERING TO SELECT BETWEEN RECRUITER AND COMPANY
 /**
@@ -40,8 +41,18 @@ class UserProfileContainer extends React.Component {
   handleSubmit = async values => {
     const res = await this.props.updateProfile(values);
     if (res.success) {
-      toast.success('Profile Updated');
+      toast.success("Profile Updated");
       return this.props.getCurrentUser();
+    } else {
+      toast.error(res.message);
+    }
+  };
+
+  handleSubmitPassword = async values => {
+    console.log(values);
+    const res = await this.props.updatePassword(values);
+    if (res.success) {
+      toast.success("Password successfully changed");
     } else {
       toast.error(res.message);
     }
@@ -50,17 +61,23 @@ class UserProfileContainer extends React.Component {
   renderForm = () => {
     if (this.state.userDetails.role_id === sysParams.roles.recruiter) {
       return (
-        <RecruiterProfileUpdateForm
-          userDetails={this.state.userDetails}
-          onSubmit={this.handleSubmit}
-        />
+        <div>
+          <RecruiterProfileUpdateForm
+            userDetails={this.state.userDetails}
+            onSubmit={this.handleSubmit}
+          />
+          <PasswordChangeForm onSubmit={this.handleSubmitPassword} />
+        </div>
       );
     } else if (this.state.userDetails.role_id === sysParams.roles.company) {
       return (
-        <CompanyProfileUpdateForm
-          userDetails={this.state.userDetails}
-          onSubmit={this.handleSubmit}
-        />
+        <div>
+          <CompanyProfileUpdateForm
+            userDetails={this.state.userDetails}
+            onSubmit={this.handleSubmit}
+          />
+          <PasswordChangeForm onSubmit={this.handleSubmitPassword} />
+        </div>
       );
     }
   };
