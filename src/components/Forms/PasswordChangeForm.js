@@ -4,7 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 import { renderField, required } from 'components/Forms/FormFieldValidation';
 import { Grid } from "material-ui";
 import {
-  ProfileCard,
   RegularCard,
   Button,
   ItemGrid
@@ -21,7 +20,7 @@ const styles = {
 
 class PasswordChangeForm extends React.Component{
   render(){
-  const { handleSubmit,submitting } = this.props;
+  const { handleSubmit } = this.props;
   return(
         <form
         id="change-password-form"
