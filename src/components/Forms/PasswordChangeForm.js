@@ -1,13 +1,9 @@
 // module imports
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { renderField, required } from 'components/Forms/FormFieldValidation';
-import { Grid } from "material-ui";
-import {
-  RegularCard,
-  Button,
-  ItemGrid
-} from "components";
+import { renderField } from 'components/Forms/FormFieldValidation';
+import { Grid } from 'material-ui';
+import { RegularCard, Button, ItemGrid } from 'components';
 // local imports
 
 // style imports

@@ -69,7 +69,7 @@ const appRoutes = [
     navbarName: 'Profile',
     icon: Person,
     component: UserProfile,
-    access: 7
+    access: 6
   },
   // {
   //   path: '/table',
