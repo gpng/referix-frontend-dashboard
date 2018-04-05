@@ -1,7 +1,7 @@
 // set axios base config if in production
 import axiosDefaults from 'axios/lib/defaults';
 if (process.env.NODE_ENV === 'production') {
-  axiosDefaults.baseURL = 'http://referix-api.herokuapp.com';
+  axiosDefaults.baseURL = 'https://referix-api.herokuapp.com';
 }
 
 // manage all actions exports
