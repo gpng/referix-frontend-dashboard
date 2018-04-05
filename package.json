@@ -1,7 +1,7 @@
 {
-  "name": "material-dashboard-react",
+  "name": "referix-frontend",
   "version": "1.1.0",
-  "description": "Material Dashboard React. Coded by Creative Tim. Adapted for Referix",
+  "description": "Material Dashboard for Referix",
   "private": false,
   "main": "index.js",
   "dependencies": {
@@ -62,10 +62,10 @@
     "url": "git+https://github.com/gpng/referix-frontend-dashboard.git"
   },
   "keywords": [],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
+  "author": "Referix",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/material-dashboard-react/issues"
+    "url": "https://github.com/gpng/referix-frontend-dashboard/issues"
   },
-  "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard"
+  "homepage": "https://referix.herokuapp.com"
 }
