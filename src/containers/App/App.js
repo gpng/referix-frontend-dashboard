@@ -35,7 +35,7 @@ const switchRoutes = (
   </Switch>
 );
 
-class App extends React.Component {
+export class App extends React.Component {
   state = {
     mobileOpen: false
   };

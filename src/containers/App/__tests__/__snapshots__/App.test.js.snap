@@ -1,0 +1,399 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Container renders without crashing 1`] = `
+<div>
+  <WithStyles(Sidebar)
+    authenticated={false}
+    color="blue"
+    handleDrawerToggle={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    image="sidebar-2.jpg"
+    location={
+      Object {
+        "pathname": "/",
+      }
+    }
+    logo="reactlogo.png"
+    logoText="Referix"
+    open={false}
+    routes={
+      Array [
+        Object {
+          "access": 7,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Referix Dashboard",
+          "path": "/dashboard",
+          "sidebarName": "Dashboard",
+        },
+        Object {
+          "access": 1,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "User Management",
+          "path": "/manageusers",
+          "sidebarName": "User Management",
+        },
+        Object {
+          "access": 4,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Jobs Management",
+          "path": "/managejobs",
+          "sidebarName": "Your Jobs",
+        },
+        Object {
+          "access": 2,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Applied Jobs",
+          "path": "/appliedjobs",
+          "sidebarName": "Applied Jobs",
+        },
+        Object {
+          "access": 2,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Job Search",
+          "path": "/searchjobs",
+          "sidebarName": "Search Jobs",
+        },
+        Object {
+          "access": 6,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Profile",
+          "path": "/profile",
+          "sidebarName": "User Profile",
+        },
+        Object {
+          "navbarName": "Redirect",
+          "path": "/",
+          "redirect": true,
+          "to": "/dashboard",
+        },
+      ]
+    }
+  />
+  <div>
+    <WithStyles(Header)
+      authenticated={false}
+      handleDrawerToggle={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      location={
+        Object {
+          "pathname": "/",
+        }
+      }
+      routes={
+        Array [
+          Object {
+            "access": 7,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Referix Dashboard",
+            "path": "/dashboard",
+            "sidebarName": "Dashboard",
+          },
+          Object {
+            "access": 1,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "User Management",
+            "path": "/manageusers",
+            "sidebarName": "User Management",
+          },
+          Object {
+            "access": 4,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Jobs Management",
+            "path": "/managejobs",
+            "sidebarName": "Your Jobs",
+          },
+          Object {
+            "access": 2,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Applied Jobs",
+            "path": "/appliedjobs",
+            "sidebarName": "Applied Jobs",
+          },
+          Object {
+            "access": 2,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Job Search",
+            "path": "/searchjobs",
+            "sidebarName": "Search Jobs",
+          },
+          Object {
+            "access": 6,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Profile",
+            "path": "/profile",
+            "sidebarName": "User Profile",
+          },
+          Object {
+            "navbarName": "Redirect",
+            "path": "/",
+            "redirect": true,
+            "to": "/dashboard",
+          },
+        ]
+      }
+    />
+    <div>
+      <div>
+        <Switch>
+          <Route
+            component={[Function]}
+            key="0"
+            path="/dashboard"
+          />
+          <Route
+            component={[Function]}
+            key="1"
+            path="/manageusers"
+          />
+          <Route
+            component={[Function]}
+            key="2"
+            path="/managejobs"
+          />
+          <Route
+            component={[Function]}
+            key="3"
+            path="/appliedjobs"
+          />
+          <Route
+            component={[Function]}
+            key="4"
+            path="/searchjobs"
+          />
+          <Route
+            component={[Function]}
+            key="5"
+            path="/profile"
+          />
+          <Redirect
+            from="/"
+            key="6"
+            push={false}
+            to="/dashboard"
+          />
+        </Switch>
+      </div>
+    </div>
+    <WithStyles(Footer) />
+  </div>
+</div>
+`;
+
+exports[`App Container when authenticated renders without crashing 1`] = `
+<div>
+  <WithStyles(Sidebar)
+    authenticated={true}
+    color="blue"
+    handleDrawerToggle={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    image="sidebar-2.jpg"
+    location={
+      Object {
+        "pathname": "/",
+      }
+    }
+    logo="reactlogo.png"
+    logoText="Referix"
+    open={false}
+    routes={
+      Array [
+        Object {
+          "access": 7,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Referix Dashboard",
+          "path": "/dashboard",
+          "sidebarName": "Dashboard",
+        },
+        Object {
+          "access": 1,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "User Management",
+          "path": "/manageusers",
+          "sidebarName": "User Management",
+        },
+        Object {
+          "access": 4,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Jobs Management",
+          "path": "/managejobs",
+          "sidebarName": "Your Jobs",
+        },
+        Object {
+          "access": 2,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Applied Jobs",
+          "path": "/appliedjobs",
+          "sidebarName": "Applied Jobs",
+        },
+        Object {
+          "access": 2,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Job Search",
+          "path": "/searchjobs",
+          "sidebarName": "Search Jobs",
+        },
+        Object {
+          "access": 6,
+          "component": [Function],
+          "icon": [Function],
+          "navbarName": "Profile",
+          "path": "/profile",
+          "sidebarName": "User Profile",
+        },
+        Object {
+          "navbarName": "Redirect",
+          "path": "/",
+          "redirect": true,
+          "to": "/dashboard",
+        },
+      ]
+    }
+  />
+  <div>
+    <WithStyles(Header)
+      authenticated={true}
+      handleDrawerToggle={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      location={
+        Object {
+          "pathname": "/",
+        }
+      }
+      routes={
+        Array [
+          Object {
+            "access": 7,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Referix Dashboard",
+            "path": "/dashboard",
+            "sidebarName": "Dashboard",
+          },
+          Object {
+            "access": 1,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "User Management",
+            "path": "/manageusers",
+            "sidebarName": "User Management",
+          },
+          Object {
+            "access": 4,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Jobs Management",
+            "path": "/managejobs",
+            "sidebarName": "Your Jobs",
+          },
+          Object {
+            "access": 2,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Applied Jobs",
+            "path": "/appliedjobs",
+            "sidebarName": "Applied Jobs",
+          },
+          Object {
+            "access": 2,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Job Search",
+            "path": "/searchjobs",
+            "sidebarName": "Search Jobs",
+          },
+          Object {
+            "access": 6,
+            "component": [Function],
+            "icon": [Function],
+            "navbarName": "Profile",
+            "path": "/profile",
+            "sidebarName": "User Profile",
+          },
+          Object {
+            "navbarName": "Redirect",
+            "path": "/",
+            "redirect": true,
+            "to": "/dashboard",
+          },
+        ]
+      }
+    />
+    <div>
+      <div>
+        <Switch>
+          <Route
+            component={[Function]}
+            key="0"
+            path="/dashboard"
+          />
+          <Route
+            component={[Function]}
+            key="1"
+            path="/manageusers"
+          />
+          <Route
+            component={[Function]}
+            key="2"
+            path="/managejobs"
+          />
+          <Route
+            component={[Function]}
+            key="3"
+            path="/appliedjobs"
+          />
+          <Route
+            component={[Function]}
+            key="4"
+            path="/searchjobs"
+          />
+          <Route
+            component={[Function]}
+            key="5"
+            path="/profile"
+          />
+          <Redirect
+            from="/"
+            key="6"
+            push={false}
+            to="/dashboard"
+          />
+        </Switch>
+      </div>
+    </div>
+    <WithStyles(Footer) />
+  </div>
+</div>
+`;

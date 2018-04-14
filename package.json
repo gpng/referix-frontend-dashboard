@@ -57,6 +57,9 @@
       "target": "http://localhost:3000"
     }
   },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gpng/referix-frontend-dashboard.git"
@@ -67,5 +70,12 @@
   "bugs": {
     "url": "https://github.com/gpng/referix-frontend-dashboard/issues"
   },
-  "homepage": "https://referix.herokuapp.com"
+  "homepage": "https://referix.herokuapp.com",
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "jest-enzyme": "^6.0.0",
+    "react-test-renderer": "^16.3.1"
+  }
 }
